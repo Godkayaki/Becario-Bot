@@ -12,13 +12,20 @@ client = discord.Client()
 
 BLANK='\u200b'
 
-'''@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))'''
+##bo definitions
+#NM HD HR DT FM TB
+bo7_p = [4,2,2,2,0,1]
+bo9_1 = [5,2,2,3,0,1]
+bo9_2 = [4,2,2,2,2,1]
+bo11_1 = [5,3,3,3,0,1]
+bo11_2 = [4,3,3,3,2,1]
+bo13_1 = [6,3,3,4,0,1]
+bo13_2 = [5,3,3,3,3,1]
 
 @client.event
 async def on_ready():
     await client.change_presence(activity=discord.Game('>help'))
+    #print('We have logged in as {0.user}'.format(client))
 
 @client.event
 async def on_message(message):
@@ -105,5 +112,6 @@ async def on_message(message):
         if message.content.startswith('>'):
             await message.channel.send('Command not found; Type >help to see how the commands and formats work.')
 
+#read first line of private api key file
 fline=open(apikey).readline().rstrip()
 client.run(fline)
