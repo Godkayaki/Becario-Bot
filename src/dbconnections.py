@@ -88,14 +88,13 @@ def db_get_maps_hr(quant):
     final=[]
 
     for i in range(0,quant):
-        if i != 0:
-            try:
-                tmp = "SELECT link FROM maps WHERE type='HR"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
-                mycursor.execute(tmp)
-                query = mycursor.fetchall()
-                final.append(query[0])
-            except:
-                print("Not enough maps in the database...")
+        try:
+            tmp = "SELECT link FROM maps WHERE type='HR"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
+            mycursor.execute(tmp)
+            query = mycursor.fetchall()
+            final.append(query[0])
+        except:
+            print("Not enough maps in the database...")
 
     return final
 
@@ -107,14 +106,13 @@ def db_get_maps_dt(quant):
     final=[]
 
     for i in range(0,quant):
-        if i != 0:
-            try:
-                tmp = "SELECT link FROM maps WHERE type='DT"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
-                mycursor.execute(tmp)
-                query = mycursor.fetchall()
-                final.append(query[0])
-            except:
-                print("Not enough maps in the database...")
+        try:
+            tmp = "SELECT link FROM maps WHERE type='DT"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
+            mycursor.execute(tmp)
+            query = mycursor.fetchall()
+            final.append(query[0])
+        except:
+            print("Not enough maps in the database...")
 
     return final
 
@@ -126,14 +124,13 @@ def db_get_maps_fm(quant):
     final=[]
 
     for i in range(0,quant):
-        if i != 0:
-            try:
-                tmp = "SELECT link FROM maps WHERE type='FM"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
-                mycursor.execute(tmp)
-                query = mycursor.fetchall()
-                final.append(query[0])
-            except:
-                print("Not enough maps in the database...")
+        try:
+            tmp = "SELECT link FROM maps WHERE type='FM"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
+            mycursor.execute(tmp)
+            query = mycursor.fetchall()
+            final.append(query[0])
+        except:
+            print("Not enough maps in the database...")
 
     return final
 
@@ -145,7 +142,6 @@ def db_get_maps_tb(quant):
     final=[]
 
     for i in range(0,quant):
-        #if i != 0:
         try:
             tmp = "SELECT link FROM maps WHERE type='TB"+str(i+1)+"' ORDER BY RAND() LIMIT 1"
             mycursor.execute(tmp)
